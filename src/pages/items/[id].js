@@ -8,6 +8,7 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import SkeletonCard from "../Components/SkeletonCard";
 
 const BookDetail = () => {
   const [book, setBook] = useState([]);
@@ -31,7 +32,9 @@ const BookDetail = () => {
   }, [router.query.id]);
 
   return loading ? (
-    <div>Loading...</div>
+    <div className="flex justify-center items-center w-full h-full min-h-screen bg-slate-100">
+      <SkeletonCard count={1} />
+    </div>
   ) : (
     <Box className="flex flex-col px-6 justify-center items-center min-h-screen h-full bg-slate-100 py-6">
       <Card className="w-full md:w-3/4 lg:w-1/2 min-w-[365px] h-full flex flex-col md:flex-row justify-center items-center text-center md:text-left px-4 py-4">
