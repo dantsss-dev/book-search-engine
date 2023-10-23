@@ -33,23 +33,23 @@ const BookDetail = () => {
   return loading ? (
     <div>Loading...</div>
   ) : (
-    <Box className="flex flex-col justify-center items-center h-screen bg-slate-100 py-6">
-      <Card className="w-1/3 flex flex-row px-4 py-4 overflow-auto">
+    <Box className="flex flex-col px-6 justify-center items-center min-h-screen h-full bg-slate-100 py-6">
+      <Card className="w-full md:w-3/4 lg:w-1/2 min-w-[365px] h-full flex flex-col md:flex-row justify-center items-center text-center md:text-left px-4 py-4">
         <CardMedia
-          className="object-contain w-1/4"
+          className="object-contain w-1/2 lg:w-1/4"
           component="img"
           alt="cover image"
           image={
             book.volumeInfo.imageLinks === undefined
-              ? ""
+              ? "/assets/cover.png"
               : book.volumeInfo.imageLinks.thumbnail
           }
         />
-        <CardContent className="flex flex-col ml-5 gap-3 w-3/4">
-          <Typography className="w-full" variant="h3">
+        <CardContent className="flex flex-col justify-center ml-5 gap-3 w-3/4">
+          <Typography className="w-full text-3xl md:text-5xl" variant="h3">
             {book.volumeInfo.title}
           </Typography>
-          <Typography className="w-full" variant="h4">
+          <Typography className="w-full text-2xl md:text-3xl" variant="h4">
             {book.volumeInfo.authors
               ? `Authors: ${book.volumeInfo.authors.map(
                   (author) => `${author} `
@@ -74,7 +74,7 @@ const BookDetail = () => {
           </Typography>
         </CardContent>
       </Card>
-      <Link className="w-1/3 h-12 mt-6" href="/">
+      <Link className="w-full md:w-3/4 lg:w-1/3 h-12 mt-6" href="/">
         <Button
           className="w-full h-full"
           variant="outlined"

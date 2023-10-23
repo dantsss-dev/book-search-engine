@@ -31,11 +31,7 @@ const SearchResults = () => {
     <div>Loading...</div>
   ) : (
     <Box
-      className="flex flex-col flex-wrap justify-center items-center w-full gap-4 bg-slate-100"
-      component="form"
-      sx={{
-        height: "100vh",
-      }}
+      className="flex flex-row md:flex-col flex-wrap justify-center items-center w-full min-h-screen h-full gap-4 bg-slate-100"
       noValidate
       autoComplete="off"
     >
@@ -44,7 +40,7 @@ const SearchResults = () => {
           Results for: {router.query.search}
         </Typography>
       </div>
-      <div className="flex flex-row justify-center items-start w-full h-auto text-center gap-5">
+      <div className="flex flex-row flex-wrap justify-center items-start w-full h-auto text-center gap-5">
         {books.map((book) => (
           <ActionAreaCard
             key={book.id}

@@ -29,22 +29,18 @@ const HomePage = () => {
 
   return (
     <Box
-      className="bg-slate-100"
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "column",
-        width: "100%",
-        height: "100vh",
-      }}
+      className="flex flex-col w-full h-screen gap-4 justify-start pt-60 md:pt-0 md:justify-center items-center bg-slate-100 "
       noValidate
       autoComplete="off"
     >
-      <Typography variant="h1" gutterBottom>
+      <Typography
+        className="text-4xl md:text-5xl lg:text-7xl"
+        variant="h1"
+        gutterBottom
+      >
         Looking for a book?
       </Typography>
-      <div className="flex flex-row justify-center items-start w-1/2">
+      <div className="flex flex-row justify-center items-start w-11/12 md:w-3/4 lg:w-1/2">
         <TextField
           error={error.value}
           className="w-full"
