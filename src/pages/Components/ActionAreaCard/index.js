@@ -30,3 +30,5 @@ export const ActionAreaCard = ({ title, date, id, img }) => {
     </Card>
   );
 };
+
+export default ActionAreaCard;
